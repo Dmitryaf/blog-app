@@ -1,6 +1,4 @@
 import { render } from "react-dom";
+import { App } from "./components/App";
 
-render(
-    <div>testw1312</div>,
-    document.getElementById('root'),
-)
+render(<App />, document.getElementById("root"));
