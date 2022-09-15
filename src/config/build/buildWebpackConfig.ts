@@ -3,12 +3,13 @@ import webpack from "webpack";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";
 import { buildResolves } from "./buildResolves";
+import { buildWebpackDevServer } from "./buildWebpackDevServer";
 import { BuildOptions } from "./types/config";
 
 export function buildWebpackConfig(
   options: BuildOptions
 ): webpack.Configuration {
-  const { paths, mode } = options;
+  const { paths, mode, isDev } = options;
   return {
     mode,
     entry: paths.entry,
@@ -19,8 +20,10 @@ export function buildWebpackConfig(
     },
     plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolves(),
+    devtool: isDev ? "inline-source-map" : undefined,
+    devServer: isDev ? buildWebpackDevServer(options) : undefined,
   };
 }
