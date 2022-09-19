@@ -4,7 +4,8 @@ import { classNames } from "../helpers/classNames/classNames";
 
 import { AboutPageAsync } from "../pages/About/AboutPageAsync";
 import { MainPageAsync } from "../pages/MainPage/MainPageAsync";
-import { useTheme } from "../theme/useTheme";
+
+import { useTheme } from "./providers/ThemeProvider";
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
