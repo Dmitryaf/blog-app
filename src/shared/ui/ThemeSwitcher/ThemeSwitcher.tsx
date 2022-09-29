@@ -1,8 +1,8 @@
-import { useTheme } from "shared/lib/theme/useTheme";
-import { classNames } from "shared/lib/classNames/classNames";
+import useTheme from "shared/lib/theme/useTheme";
+import classNames from "shared/lib/classNames/classNames";
 import ThemeIcon from "shared/assets/theme_icon.svg";
 
-import { Button } from "../Button/Button";
+import Button from "../Button/Button";
 
 import cls from "./ThemeSwitcher.module.scss";
 
@@ -10,7 +10,7 @@ interface ThemeSwitcherProps {
   classes?: string;
 }
 
-export const ThemeSwitcher = ({ classes }: ThemeSwitcherProps) => {
+const ThemeSwitcher = ({ classes }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
   return (
     <Button
@@ -22,3 +22,5 @@ export const ThemeSwitcher = ({ classes }: ThemeSwitcherProps) => {
     </Button>
   );
 };
+
+export default ThemeSwitcher;

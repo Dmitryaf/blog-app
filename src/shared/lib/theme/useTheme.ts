@@ -6,14 +6,15 @@ interface UseThemeResult {
   toggleTheme: () => void;
 }
 
-export const useTheme = (): UseThemeResult => {
+const useTheme = (): UseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
-    const newTheme =
-      theme === Themes.PRIMARY ? Themes.SECONDARY : Themes.PRIMARY;
+    const newTheme = theme === Themes.PRIMARY ? Themes.SECONDARY : Themes.PRIMARY;
     setTheme(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
   return { theme, toggleTheme };
 };
+
+export default useTheme;

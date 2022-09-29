@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import "shared/config/i18n/i18n";
 
-import { ThemeProvider } from "app/providers/ThemeProvider";
+import ThemeProvider from "app/providers/ThemeProvider";
 
 import App from "./app/App";
 
@@ -15,5 +15,5 @@ render(
       <App />
     </ThemeProvider>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );

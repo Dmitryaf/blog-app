@@ -1,13 +1,13 @@
 import webpack from "webpack";
 
-import { buildLoaders } from "./buildLoaders";
-import { buildPlugins } from "./buildPlugins";
-import { buildResolves } from "./buildResolves";
-import { buildWebpackDevServer } from "./buildWebpackDevServer";
+import buildLoaders from "./buildLoaders";
+import buildPlugins from "./buildPlugins";
+import buildResolves from "./buildResolves";
+import buildWebpackDevServer from "./buildWebpackDevServer";
 import { BuildOptions } from "./types/config";
 
-export function buildWebpackConfig(
-  options: BuildOptions
+function buildWebpackConfig(
+  options: BuildOptions,
 ): webpack.Configuration {
   const { paths, mode, isDev } = options;
   return {
@@ -27,3 +27,5 @@ export function buildWebpackConfig(
     devServer: isDev ? buildWebpackDevServer(options) : undefined,
   };
 }
+
+export default buildWebpackConfig;
