@@ -3,8 +3,10 @@ import { Routes, Route } from "react-router-dom";
 
 import { RouterConfig } from "shared/config/routerConfig";
 
+import PageLoader from "widgets/PageLoader";
+
 const AppRouter = () => (
-  <Suspense fallback="">
+  <Suspense fallback={<PageLoader />}>
     <Routes>
       {RouterConfig.map((route) => (
         <Route
