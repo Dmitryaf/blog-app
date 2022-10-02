@@ -23,7 +23,7 @@ const Sidebar = ({ classes }: SidebarProps) => {
       </div>
 
       <button type="button" onClick={() => setIsCollapsed((prev) => !prev)}>
-        TOGGLE
+        &gt;
       </button>
     </div>
   );
