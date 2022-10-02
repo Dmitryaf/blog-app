@@ -8,14 +8,12 @@ const enum AppRouters {
   ABOUT = "about",
 }
 
-const RouterPath: Record<AppRouters, string> = {
+export const RouterPath: Record<AppRouters, string> = {
   [AppRouters.MAIN]: "/",
   [AppRouters.ABOUT]: "/about",
 };
 
-const RouterConfig: RouteProps[] = [
+export const RouterConfig: RouteProps[] = [
   { path: RouterPath.main, element: <MainPage /> },
   { path: RouterPath.about, element: <AboutPage /> },
 ];
-
-export default RouterConfig;

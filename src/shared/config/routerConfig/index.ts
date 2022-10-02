@@ -1,3 +1,1 @@
-import RouterConfig from "./ui/routerConfig";
-
-export default RouterConfig;
+export { RouterConfig, RouterPath } from "./ui/routerConfig";
