@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
   parser: "@typescript-eslint/parser",
@@ -32,10 +33,12 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     quotes: [2, "double", { avoidEscape: true }],
     "no-underscore-dangle": "off",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": "off",
     "operator-linebreak": ["error", "after"],
     "arrow-body-style": ["error", "as-needed"],
     "i18next/no-literal-string": ["error", { markupOnly: true }],
+    "max-len": ["error", { ignoreComments: true }],
+    "implicit-arrow-linebreak": "off",
   },
   globals: {
     __IS_DEV__: true,
