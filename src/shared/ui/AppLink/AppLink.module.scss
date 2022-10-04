@@ -1,23 +1,23 @@
 .appLink {
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-right: 15px;
-    border-bottom: 1px solid transparent;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 15px;
+  border-bottom: 1px solid transparent;
 
-    :last-child {
-        margin-right: 0;
-    }
+  :last-child {
+    margin-right: 0;
+  }
 }
 
 .primary {
-    color: var(--inverted-primary-color);
+  color: var(--inverted-primary-color);
 }
 
 .secondary {
-    color: var(--inverted-secondary-color);
+  color: var(--inverted-secondary-color);
 }
 
 .active {
-    color: var(--inverted-primary-color);
-    border-bottom-color: var(--inverted-primary-color);
+  color: var(--inverted-primary-color);
+  border-bottom-color: var(--inverted-primary-color);
 }
