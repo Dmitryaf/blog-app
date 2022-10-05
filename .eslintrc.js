@@ -37,7 +37,7 @@ module.exports = {
     "operator-linebreak": ["error", "after"],
     "arrow-body-style": ["error", "as-needed"],
     "i18next/no-literal-string": ["error", { markupOnly: true }],
-    "max-len": ["error", { ignoreComments: true }],
+    "max-len": ["error", { ignoreComments: true, code: 100 }],
     "implicit-arrow-linebreak": "off",
   },
   globals: {
