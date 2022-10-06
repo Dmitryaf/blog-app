@@ -22,6 +22,7 @@ export default {
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
     "node_modules",
+    "src",
   ],
 
   // An array of file extensions your modules use
@@ -36,9 +37,9 @@ export default {
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
   testMatch: [
-    "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
+    "<rootDir>**/*(*.)@(spec|test).[tj]s?(x)",
   ],
-  // rootDir: undefined,
+  rootDir: "../../",
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
