@@ -2,7 +2,7 @@ import useTheme from "shared/lib/theme/useTheme";
 import classNames from "shared/lib/classNames/classNames";
 import ThemeIcon from "shared/assets/theme_icon.svg";
 
-import Button, { ButtonTheme } from "../Button/Button";
+import { Button, ButtonTheme } from "../Button/Button";
 
 import cls from "./ThemeSwitcher.module.scss";
 
