@@ -40,6 +40,14 @@ module.exports = {
     "max-len": ["error", { ignoreComments: true, code: 100 }],
     "implicit-arrow-linebreak": "off",
   },
+  overrides: [
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
+  ],
   globals: {
     __IS_DEV__: true,
   },
