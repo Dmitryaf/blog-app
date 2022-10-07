@@ -10,9 +10,10 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ classes }: SidebarProps) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, toggleCollapse] = useState(false);
   return (
     <div
+      data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: isCollapsed }, [
         classes,
       ])}
@@ -22,7 +23,11 @@ const Sidebar = ({ classes }: SidebarProps) => {
         <LangSwitcher classes={cls.lang} />
       </div>
 
-      <button type="button" onClick={() => setIsCollapsed((prev) => !prev)}>
+      <button
+        data-testid="sidebar-toggle"
+        type="button"
+        onClick={() => toggleCollapse((prev) => !prev)}
+      >
         &gt;
       </button>
     </div>
