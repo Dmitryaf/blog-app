@@ -1,10 +1,10 @@
-import useTheme from "shared/lib/theme/useTheme";
-import classNames from "shared/lib/classNames/classNames";
-import ThemeIcon from "shared/assets/theme_icon.svg";
+import useTheme from 'shared/lib/theme/useTheme';
+import classNames from 'shared/lib/classNames/classNames';
+import ThemeIcon from 'shared/assets/theme_icon.svg';
 
-import { Button, ButtonTheme } from "../Button/Button";
+import { Button, ButtonTheme } from '../Button/Button';
 
-import cls from "./ThemeSwitcher.module.scss";
+import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   classes?: string;
@@ -19,7 +19,7 @@ const ThemeSwitcher = ({ classes }: ThemeSwitcherProps) => {
       type="button"
       onClick={() => toggleTheme()}
     >
-      <ThemeIcon className={classNames("theme-icon", {}, [cls.switcherIcon])} />
+      <ThemeIcon className={classNames('theme-icon', {}, [cls.switcherIcon])} />
     </Button>
   );
 };

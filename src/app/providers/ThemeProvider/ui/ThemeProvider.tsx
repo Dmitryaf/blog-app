@@ -1,9 +1,9 @@
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useMemo, useState } from 'react';
 import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
   Themes,
-} from "shared/lib/theme/ThemeContext";
+} from 'shared/lib/theme/ThemeContext';
 
 export const DEFAULT_THEME =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes) || Themes.PRIMARY;

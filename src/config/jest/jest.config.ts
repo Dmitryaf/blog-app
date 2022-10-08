@@ -3,36 +3,36 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path';
 
 export default {
   clearMocks: true,
   coveragePathIgnorePatterns: [
-    "\\\\node_modules\\\\",
+    '\\\\node_modules\\\\',
   ],
 
   moduleDirectories: [
-    "node_modules",
-    "src",
+    'node_modules',
+    'src',
   ],
 
   moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node",
+    'js',
+    'jsx',
+    'ts',
+    'tsx',
+    'json',
+    'node',
   ],
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   testMatch: [
-    "<rootDir>**/*(*.)@(spec|test).[tj]s?(x)",
+    '<rootDir>**/*(*.)@(spec|test).[tj]s?(x)',
   ],
-  rootDir: "../../",
-  setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+  rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
-    "\\.s?css$": "identity-obj-proxy",
-    "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [

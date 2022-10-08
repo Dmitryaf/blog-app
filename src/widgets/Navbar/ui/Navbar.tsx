@@ -1,10 +1,10 @@
-import { useTranslation } from "react-i18next";
-import { RouterPath } from "shared/config/routerConfig/ui/routerConfig";
+import { useTranslation } from 'react-i18next';
+import { RouterPath } from 'shared/config/routerConfig/ui/routerConfig';
 
-import classNames from "shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import classNames from 'shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 
-import cls from "./Navbar.module.scss";
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
   classes?: string;
@@ -16,9 +16,9 @@ const Navbar = ({ classes }: NavbarProps) => {
     <div className={classNames(cls.navbar, {}, [classes])}>
       <div className={cls.links}>
         <AppLink theme={AppLinkTheme.ACTIVE} to={RouterPath.main}>
-          {t("Главная")}
+          {t('Главная')}
         </AppLink>
-        <AppLink to={RouterPath.about}>{t("О нас")}</AppLink>
+        <AppLink to={RouterPath.about}>{t('О нас')}</AppLink>
       </div>
     </div>
   );

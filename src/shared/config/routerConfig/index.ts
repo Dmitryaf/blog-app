@@ -1,1 +1,1 @@
-export { RouterConfig, RouterPath } from "./ui/routerConfig";
+export { RouterConfig, RouterPath } from './ui/routerConfig';
