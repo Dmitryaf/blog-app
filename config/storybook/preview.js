@@ -1,10 +1,12 @@
 import { addDecorator } from '@storybook/react';
 import { withThemes } from 'storybook-addon-themes/react';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator';
 
 addDecorator(withThemes);
 addDecorator(StyleDecorator);
+addDecorator(withRouter);
 /* eslint-disable import/prefer-default-export */
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
