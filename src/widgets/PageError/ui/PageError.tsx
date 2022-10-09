@@ -20,7 +20,11 @@ const PageError = ({ classes }: PageErrorProps) => {
       <h1 className={cls.title}>
         {t('Произошла непредвиденная ошибка')}
       </h1>
-      <Button onClick={reloadPage}>{t('Перезагрузить страницу')}</Button>
+      <Button
+        onClick={reloadPage}
+      >
+        {t('Перезагрузить страницу')}
+      </Button>
     </div>
 
   );
