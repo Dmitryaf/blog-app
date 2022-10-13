@@ -15,7 +15,8 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook",
+    "chromatic": "npx chromatic --project-token=9368e4142cfd"
   },
   "repository": {
     "type": "git",
@@ -56,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.10.2",
     "css-loader": "^6.7.1",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -92,25 +94,11 @@
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
     "i18next-http-backend": "^1.3.2",
-    "loki": "^0.28.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.5",
     "react-router-dom": "^6.4.0"
   },
-  "loki": {
-    "configurations": {
-      "chrome.laptop": {
-        "target": "chrome.app",
-        "width": 1366,
-        "height": 768,
-        "deviceScaleFactor": 1,
-        "mobile": false
-      },
-      "chrome.iphone7": {
-        "target": "chrome.app",
-        "preset": "iPhone 7"
-      }
-    }
-  }
+  "readme": "ERROR: No README data found!",
+  "_id": "blog-app@1.0.0"
 }
