@@ -6,21 +6,21 @@ import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-  classes?: string;
+  className?: string;
 }
 
-const Sidebar = ({ classes }: SidebarProps) => {
+const Sidebar = ({ className }: SidebarProps) => {
   const [isCollapsed, toggleCollapse] = useState(false);
   return (
     <div
       data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: isCollapsed }, [
-        classes,
+        className,
       ])}
     >
       <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher classes={cls.lang} />
+        <ThemeSwitcher iconClassName={cls.themeSwitcherIcon} />
+        <LangSwitcher className={cls.lang} />
       </div>
 
       <button

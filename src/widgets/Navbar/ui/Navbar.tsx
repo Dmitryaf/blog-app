@@ -7,18 +7,18 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
-  classes?: string;
+  className?: string;
 }
 
-const Navbar = ({ classes }: NavbarProps) => {
+const Navbar = ({ className }: NavbarProps) => {
   const { t, i18n } = useTranslation();
   return (
-    <div className={classNames(cls.navbar, {}, [classes])}>
+    <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.links}>
-        <AppLink theme={AppLinkTheme.ACTIVE} to={RouterPath.main}>
+        <AppLink className={cls.navbarLink} to={RouterPath.main}>
           {t('Главная')}
         </AppLink>
-        <AppLink to={RouterPath.about}>{t('О нас')}</AppLink>
+        <AppLink className={cls.navbarLink} to={RouterPath.about}>{t('О нас')}</AppLink>
       </div>
     </div>
   );

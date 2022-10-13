@@ -1,14 +1,14 @@
 .appLink {
-  color: var(--inverted-secondary-color);
+  color: var(--primary-color);
   text-decoration: none;
   margin-right: 15px;
   border-bottom: 1px solid transparent;
 
   :last-child {
     margin-right: 0;
-  }
-}
 
-.active {
-  border-bottom-color: var(--inverted-secondary-color);
+    &.active {
+      border-bottom-color: var(--primary-color);
+    }
+  }
 }

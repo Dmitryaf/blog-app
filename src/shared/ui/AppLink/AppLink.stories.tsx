@@ -21,10 +21,3 @@ export const AppLinkShared = Template.bind({});
 AppLinkShared.args = {
   children: 'AppLink',
 };
-
-export const Active = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Active.args = {
-  children: 'AppLink',
-  theme: AppLinkTheme.ACTIVE,
-};

@@ -5,10 +5,10 @@ import classNames from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '../Button/Button';
 
 interface LangSwitcherProps {
-  classes?: string;
+  className?: string;
 }
 
-const LangSwitcher = ({ classes }: LangSwitcherProps) => {
+const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
   const toggleLang = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -16,7 +16,7 @@ const LangSwitcher = ({ classes }: LangSwitcherProps) => {
   return (
     <Button
       theme={ButtonTheme.CLEAR}
-      className={classNames('', {}, [classes])}
+      className={classNames('', {}, [className])}
       type="button"
       onClick={toggleLang}
     >

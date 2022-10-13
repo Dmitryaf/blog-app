@@ -2,11 +2,11 @@ import classNames from 'shared/lib/classNames/classNames';
 import cls from './Loader.module.scss';
 
 interface LoaderProps {
-  classes?: string;
+  className?: string;
 }
 
-const Loader = ({ classes }: LoaderProps) => (
-  <div className={classNames(cls.loader, {}, [classes])}>
+const Loader = ({ className }: LoaderProps) => (
+  <div className={classNames(cls.loader, {}, [className])}>
     <div />
     <div />
     <div />

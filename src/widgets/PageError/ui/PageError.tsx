@@ -6,17 +6,17 @@ import classNames from 'shared/lib/classNames/classNames';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
-  classes?: string;
+  className?: string;
 }
 
-const PageError = ({ classes }: PageErrorProps) => {
+const PageError = ({ className }: PageErrorProps) => {
   const { t } = useTranslation();
   const reloadPage = () => {
     // eslint-disable-next-line no-restricted-globals
     location.reload();
   };
   return (
-    <div className={classNames(cls.pageError, {}, [classes])}>
+    <div className={classNames(cls.pageError, {}, [className])}>
       <h1 className={cls.title}>
         {t('Произошла непредвиденная ошибка')}
       </h1>
