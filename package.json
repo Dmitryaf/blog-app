@@ -12,11 +12,10 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "test:ui": "npx loki test",
-    "test:ui:ok": "npx loki approve",
+    "test:ui": "npx chromatic --project-token=9368e4142cfd",
+    "test:ui:ok": "npx chromatic --auto-accept-changes",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook",
-    "chromatic": "npx chromatic --project-token=9368e4142cfd"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "repository": {
     "type": "git",
