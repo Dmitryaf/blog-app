@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import classNames from 'shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import LangSwitcher from 'shared/ui/LangSwitcher/LangSwitcher';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 
@@ -23,13 +25,14 @@ const Sidebar = ({ className }: SidebarProps) => {
         <LangSwitcher className={cls.lang} />
       </div>
 
-      <button
+      <Button
+        theme={ButtonTheme.BACKGROUND}
         data-testid="sidebar-toggle"
         type="button"
         onClick={() => toggleCollapse((prev) => !prev)}
       >
-        &gt;
-      </button>
+        {isCollapsed ? '>' : '<'}
+      </Button>
     </div>
   );
 };
