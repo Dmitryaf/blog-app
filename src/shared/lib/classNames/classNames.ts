@@ -8,7 +8,7 @@ const classNames = (
   mainClass,
   ...additionClasses.filter(Boolean),
   ...Object.entries(mods)
-    .filter(([_, value]) => Boolean(value))
+    .filter(([key, value]) => key !== 'undefined' && !!value)
     .map(([className]) => className),
 ].join(' ');
 
