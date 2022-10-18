@@ -13,14 +13,7 @@ interface NavbarProps {
 const Navbar = ({ className }: NavbarProps) => {
   const { t, i18n } = useTranslation();
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
-      <div className={cls.links}>
-        <AppLink className={cls.navbarLink} to={RouterPath.main}>
-          {t('Главная')}
-        </AppLink>
-        <AppLink className={cls.navbarLink} to={RouterPath.about}>{t('О нас')}</AppLink>
-      </div>
-    </div>
+    <div className={classNames(cls.navbar, {}, [className])} />
   );
 };
 
