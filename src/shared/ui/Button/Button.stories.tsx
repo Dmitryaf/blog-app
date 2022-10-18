@@ -1,7 +1,6 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Button, ButtonTheme } from './Button';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -32,4 +31,28 @@ export const Outline = Template.bind({});
 Outline.args = {
   children: 'Button',
   theme: ButtonTheme.OUTLINE,
+};
+
+export const Background = Template.bind({});
+Background.args = {
+  children: 'Button',
+  theme: ButtonTheme.BACKGROUND,
+};
+
+export const BackgroundInverted = Template.bind({});
+BackgroundInverted.args = {
+  children: 'Button',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+};
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+  children: 'Button',
+  size: ButtonSize.L,
+};
+
+export const SizeXL = Template.bind({});
+SizeXL.args = {
+  children: 'Button',
+  size: ButtonSize.XL,
 };
