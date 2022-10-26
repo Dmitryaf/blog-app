@@ -1,5 +1,10 @@
-import { useEffect } from '@storybook/addons';
-import React, { ReactNode, useRef, useState } from 'react';
+import React, {
+  ReactNode,
+  useRef,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react';
 
 import classNames from 'shared/lib/classNames/classNames';
 
@@ -12,7 +17,7 @@ interface ModalProps {
   onClose: () => void
 }
 
-const ANIMATION_DELAY = 300;
+const ANIMATION_DELAY = 150;
 
 const Modal = (props: ModalProps) => {
   const {
@@ -27,7 +32,7 @@ const Modal = (props: ModalProps) => {
     [cls.isClosing]: isClosing,
   };
 
-  const closeHandler = () => {
+  const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true);
       /*
@@ -40,15 +45,26 @@ const Modal = (props: ModalProps) => {
         setIsClosing(false);
       }, ANIMATION_DELAY);
     }
-  };
+  }, [onClose]);
 
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
 
-  useEffect(() => () => {
-    clearTimeout(timerRef.current);
-  }, [isOpen]);
+  const onKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      closeHandler();
+    }
+  }, [closeHandler]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      clearTimeout(timerRef.current);
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isOpen, onKeyDown]);
 
   return (
     <div className={classNames(cls.modal, mods, [className])} onClick={closeHandler}>
