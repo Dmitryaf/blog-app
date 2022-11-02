@@ -4,7 +4,7 @@ import { StateSchema } from 'shared/config/redux/StateSchema';
 import getCounter from './getCounter';
 
 describe('getCounter', () => {
-  test('Should return conter value', () => {
+  test('Should return counter value', () => {
     const state: DeepPartial<StateSchema> = {
       counter: { value: 10 },
     };
