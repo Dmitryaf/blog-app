@@ -5,7 +5,6 @@ import classNames from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 
 import getCounterValue from '../model/selectors/getCounterValue/getCounterValue';
-
 import { counterActions } from '../model/slice/counterSlice';
 
 interface CounterProps {
@@ -26,8 +25,9 @@ const Counter = ({ className }: CounterProps) => {
   return (
     <div className={classNames('', {}, [className])}>
       <div>
-        <h1>{count}</h1>
+        <h1 data-testid="counter">{count}</h1>
         <Button
+          data-testid="increment-btn"
           aria-label="Increment value"
           onClick={() => dispatch(increment)}
         >
@@ -35,6 +35,7 @@ const Counter = ({ className }: CounterProps) => {
         </Button>
         <span>{count}</span>
         <Button
+          data-testid="decrement-btn"
           aria-label="Decrement value"
           onClick={() => dispatch(decrement)}
         >
