@@ -1,8 +1,8 @@
 import React, { createContext } from 'react';
 
 export const enum Themes {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
+  PRIMARY = 'app_primary_theme',
+  SECONDARY = 'app_secondary_theme',
 }
 
 export interface ThemeContextProps {
