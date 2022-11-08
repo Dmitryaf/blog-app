@@ -4,8 +4,6 @@ import { Counter } from 'features/Counter';
 const MainPage = () => (
   <div>
     <Counter />
-    {' '}
-    MainPage
   </div>
 );
 
