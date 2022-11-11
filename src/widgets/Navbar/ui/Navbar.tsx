@@ -1,11 +1,11 @@
 /* eslint-disable i18next/no-literal-string */
+import LoginModal from 'features/AuthByUsername';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import classNames from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 
-import Modal from 'shared/ui/Modal/Modal';
 import Portal from 'shared/ui/Portal/Portal';
 
 import cls from './Navbar.module.scss';
@@ -18,18 +18,18 @@ const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
 
-  const onToggleModal = useCallback(() => {
-    setIsOpenAuthModal((prev) => !prev);
+  const onShowModal = useCallback(() => {
+    setIsOpenAuthModal(true);
+  }, []);
+
+  const onCloseModal = useCallback(() => {
+    setIsOpenAuthModal(false);
   }, []);
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
-      <Button onClick={onToggleModal}>{t('Войти')}</Button>
+      <Button onClick={onShowModal}>{t('Войти')}</Button>
       <Portal>
-        <Modal isOpen={isOpenAuthModal} onClose={onToggleModal}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Excepturi voluptates fugit nam quam doloribus totam, minus saepe nobis ex a,
-          rem placeat inventore quos voluptatibus iure, quisquam doloremque suscipit corrupti?
-        </Modal>
+        <LoginModal isOpen={isOpenAuthModal} onClose={onCloseModal} />
       </Portal>
     </div>
 
