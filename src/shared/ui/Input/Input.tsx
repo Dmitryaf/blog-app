@@ -1,29 +1,58 @@
-import { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import classNames from 'shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
+export const enum InputLabelTheme {
+  INVERTED = 'invertedLabel',
+}
 interface InputProps extends HTMLInputProps {
-  className?: string;
-  value?: string,
-  onChange?: (value: string) => void
-
+  classNameInput?: string;
+  classNameWrapper?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  label?: string;
+  labelTheme?: string;
+  isLabelTop?: boolean;
 }
 
 const Input = (props: InputProps) => {
   const {
-    className, type = 'text', ...otherProps
+    classNameInput,
+    classNameWrapper,
+    type = 'text',
+    value,
+    onChange,
+    label,
+    isLabelTop,
+    labelTheme,
+    ...otherProps
   } = props;
-  const mods: Record<string, boolean> = {};
+  const modsWrapper: Record<string, boolean> = { [cls.labelTop]: isLabelTop };
+  const modsInput: Record<string, boolean> = {};
+  const modsLabel: Record<string, boolean> = { [cls[labelTheme]]: true };
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e.target.value);
+  };
 
   return (
-    <Input
-      type={type}
-      className={classNames(cls.input, mods, [className])}
-      {...otherProps}
-    />
+    <div className={classNames(cls.inputWrapper, modsWrapper, [classNameWrapper])}>
+      {label && (
+        <span className={classNames(cls.label, modsLabel, [])}>{label}</span>
+      )}
+
+      <input
+        type={type}
+        value={value}
+        onChange={onChangeHandler}
+        className={classNames(cls.input, modsInput, [classNameInput])}
+        {...otherProps}
+      />
+    </div>
+
   );
 };
 
