@@ -20,8 +20,16 @@ export const parameters = {
     default: 'primary',
     icon: 'switchalt',
     list: [
-      { name: 'primary', class: ['app', 'primary'], color: '#fff7f2' },
-      { name: 'secondary', class: ['app', 'secondary'], color: '#1d1a2d' },
+      {
+        name: 'primary',
+        class: ['app', 'app_primary_theme'],
+        color: '#fff7f2',
+      },
+      {
+        name: 'secondary',
+        class: ['app', 'app_secondary_theme'],
+        color: '#1d1a2d',
+      },
     ],
   },
   backgrounds: {
