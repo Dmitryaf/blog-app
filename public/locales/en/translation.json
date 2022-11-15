@@ -6,5 +6,7 @@
     "Произошла непредвиденная ошибка": "An unexpected error occurred",
     "Перезагрузить страницу": "Reload page",
     "Сокращенный язык": "en",
-    "Войти": "Sign in"
+    "Войти": "Sign in",
+    "Логин": "Login",
+    "Пароль": "Password"
 }
