@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import classNames from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 import Portal from 'shared/ui/Portal/Portal';
 
@@ -27,7 +27,7 @@ const Navbar = ({ className }: NavbarProps) => {
   }, []);
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
-      <Button onClick={onShowModal}>{t('Войти')}</Button>
+      <Button onClick={onShowModal} theme={ButtonTheme.BACKGROUND}>{t('Войти')}</Button>
       <Portal>
         <LoginModal isOpen={isOpenAuthModal} onClose={onCloseModal} />
       </Portal>

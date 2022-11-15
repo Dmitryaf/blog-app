@@ -13,19 +13,27 @@ import cls from './Modal.module.scss';
 interface ModalProps {
   children?: ReactNode;
   className?: string;
-  isOpen?: boolean,
-  onClose: () => void
+  isOpen?: boolean;
+  onClose: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 150;
 
 const Modal = (props: ModalProps) => {
   const {
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy,
   } = props;
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
@@ -65,6 +73,11 @@ const Modal = (props: ModalProps) => {
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  // Отрисовываем модалку только тогда, когда она вмонтирована
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <div className={classNames(cls.modal, mods, [className])} onClick={closeHandler}>

@@ -1,0 +1,32 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+
+  &.labelTop {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.label {
+  color: var(--primary-color);
+  min-width: 80px;
+  margin-right: 20px;
+}
+
+.invertedLabel {
+  color: var(--inverted-primary-color);
+}
+
+.labelTop {
+  align-items: flex-start;
+
+  .label {
+    margin-right: auto;
+    margin-bottom: 5px;
+  }
+}
+
+.input {
+  padding: 3px 10px;
+}
