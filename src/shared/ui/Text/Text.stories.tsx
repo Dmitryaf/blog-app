@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Text } from './Text';
+import { Text, TextTheme } from './Text';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -34,4 +34,13 @@ export const onlyText = Template.bind({});
 onlyText.args = {
   text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
   Animi labore quos aut magni, sapiente nesciunt harum magnam tenetur iure quaerat!`,
+};
+
+export const Error = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Error.args = {
+  title: 'Text',
+  text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+  Animi labore quos aut magni, sapiente nesciunt harum magnam tenetur iure quaerat!`,
+  theme: TextTheme.ERROR,
 };
