@@ -7,6 +7,9 @@
     "Перезагрузить страницу": "Reload page",
     "Сокращенный язык": "en",
     "Войти": "Sign in",
+    "Выйти": "Log out",
     "Логин": "Login",
-    "Пароль": "Password"
+    "Пароль": "Password",
+    "Форма авторизации": "Authorization form",
+    "Неверный логин или пароль": "Invalid login or password"
 }
