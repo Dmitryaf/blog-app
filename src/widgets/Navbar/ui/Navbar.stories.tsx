@@ -1,5 +1,6 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import StoreDecorator from 'shared/config/storybook/StoreDecorator';
 
 import Navbar from './Navbar';
 
@@ -19,3 +20,13 @@ const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 export const NavbarWidget = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NavbarWidget.args = {};
+NavbarWidget.decorators = [StoreDecorator({
+  loginForm: { username: 'admin', password: '123'},
+})];
+
+export const AuthNavbar = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+AuthNavbar.args = {};
+AuthNavbar.decorators = [StoreDecorator({
+  user: { authData: {} },
+})];
