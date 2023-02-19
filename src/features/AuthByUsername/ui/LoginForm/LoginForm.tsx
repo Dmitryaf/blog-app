@@ -8,6 +8,7 @@ import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 import classNames from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import Input, { InputLabelTheme } from 'shared/ui/Input/Input';
+import Text, { TextTheme } from 'shared/ui/Text/Text';
 
 import
 loginByUsername
@@ -40,7 +41,8 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
 
   return (
     <div className={classNames(cls.loginForm, {}, [className])}>
-      {error && <div>{error}</div>}
+      <Text title={t('Форма авторизации')} theme={TextTheme.INVERTED} />
+      {error && <Text text={t('Неверный логин или пароль')} theme={TextTheme.ERROR} />}
       <Input
         value={username}
         classNameWrapper={cls.input}
